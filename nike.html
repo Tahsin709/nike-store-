@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tahsin nike</title>
+<style>
+   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #000;
+  color: white;
+}
+
+header .logo h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+header nav ul li a:hover {
+  color: #ff6600;
+}
+
+
+.hero {
+  background-image: url(https://wallpapercave.com/wp/wp4992984.jpg);
+  background-size: cover;
+  background-position: center;
+  color: rgb(233, 236, 220);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background-color: #ff6600;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.cta-btn:hover {
+  background-color: #e65c00;
+  transition: background-color 0.3s ease;
+}
+
+
+.featured-products {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.featured-products h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding: 0 40px;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.product-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-info .price {
+  font-size: 20px;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.add-to-cart {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.add-to-cart:hover {
+  background-color: #555;
+  transition: background-color 0.3s ease;
+}
+
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 60px 20px 30px 20px;
+  text-align: left;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+.footer-logo p {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.footer-links h4,
+.footer-social h4,
+.footer-newsletter h4 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a,
+.footer-social ul li a {
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover,
+.footer-social ul li a:hover {
+  color: #ff6600;
+}
+
+.footer-social ul {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social ul li {
+  transition: transform 0.3s ease;
+}
+
+.footer-social ul li:hover {
+  transform: scale(1.1);
+}
+
+.footer-newsletter form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-newsletter form input {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.footer-newsletter form button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.footer-newsletter form button:hover {
+  background-color: #e65c00;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer-bottom p {
+  color: #ddd;
+}
+
+
+@media (max-width: 1024px) {
+ 
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-logo h1 {
+    font-size: 28px;
+  }
+
+  .footer-links h4,
+  .footer-social h4,
+  .footer-newsletter h4 {
+    font-size: 18px;
+  }
+
+  .footer-links ul li a,
+  .footer-social ul li a {
+    font-size: 14px;
+  }
+
+  .footer-newsletter form input,
+  .footer-newsletter form button {
+    width: 100%; 
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+ 
+  .footer-logo {
+    margin-bottom: 20px;
+  }
+
+  .footer-logo h1 {
+    font-size: 24px;
+  }
+
+  
+  .footer-links,
+  .footer-social,
+  .footer-newsletter {
+    margin-bottom: 30px;
+  }
+
+
+  .footer-links ul {
+    display: block;
+  }
+
+  .footer-links ul li {
+    margin: 10px 0;
+  }
+
+  .footer-links ul li a {
+    font-size: 14px;
+  }
+
+  .footer-social ul {
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .footer-newsletter form input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .footer-newsletter form button {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+     <img src="https://4kwallpapers.com/images/wallpapers/nike-drippy-8k-3440x1440-11696.png" width="100pxpx" alt="">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Unleash... Your Power By TAHSIN </h2>
+      <p>Shop the latest in performance footwear and apparel.</p>
+      <a href="#" class="cta-btn">Shop Now</a>
+    </div>
+  </section>
+
+
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="product-container">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://wallpapercave.com/wp/wp13108769.jpg" height="500px" width="300px" alt="Product 1">
+        </div> 
+        <div class="product-info">
+          <h3>Air Max</h3>
+          <p class="price">$150</p>
+          <a href="#" class="add-to-cart">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://wallpapercave.com/wp/wp2544546.jpg" alt="Product 2">
+        </div>
+        <div class="product-info">
+          <h3>Free RN</h3>
+          <p class="price">$120</p>
+          <a href="#" class="add-to-cart">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://wallpapercave.com/wp/wp4732401.jpg" alt="Product 3">
+        </div>
+        <div class="product-info">
+          <h3>Zoom Fly</h3>
+          <p class="price">$180</p>
+          <a href="#" class="add-to-cart">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://wallpapercave.com/wp/wp4652849.jpg" alt="Product 4">
+        </div>
+        <div class="product-info">
+          <h3>Air Force 1</h3>
+          <p class="price">$100</p>
+          <a href="#" class="add-to-cart">Add to Cart</a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="product-image">
+          <img src="https://wallpapercave.com/wp/wp13514856.jpg" alt="Product 5">
+        </div>
+        <div class="product-info">
+          <h3>VaporMax</h3>
+          <p class="price">$220</p>
+          <a href="#" class="add-to-cart">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- <footer>section -->
+<footer class="footer">
+    <div class="footer-container">
+    
+      <div class="footer-logo">
+        <h1>TAHSIN RAZA</h1>
+        <p>Unleash Your Power</p>
+      </div>
+  
+     
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+  
+      
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#" class="social-icon"><img src="https://cdn-icons-png.flaticon.com/128/5968/5968764.png" alt="Facebook" width="35px"></a></li>
+          <li><a href="#" class="social-icon"><img src="https://cdn-icons-png.flaticon.com/128/4138/4138124.png" width="40px" alt="Instagram"></a></li>
+          <li><a href="#" class="social-icon"><img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" width="40px" alt="Twitter"></a></li>
+          <li><a href="#" class="social-icon"><img src="https://cdn-icons-png.flaticon.com/128/4494/4494485.png" width="40px" alt="YouTube"></a></li>
+        </ul>
+      </div>
+  
+     
+      <div class="footer-newsletter">
+        <h4>Subscribe to Our Newsletter</h4>
+        <form action="#" method="post">
+          <input type="email" placeholder="Your Email Address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  
+   
+    <div class="footer-bottom">
+      <p>&copy; 2024 TAHSIN RAZA <i> QUADRI.</i> <u> All Rights Reserved.</u> </p>
+    </div>
+  </footer>
+  
+</body>
+</html>
